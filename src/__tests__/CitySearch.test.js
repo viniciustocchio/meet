@@ -22,15 +22,14 @@ describe('<CitySearch /> component', () => {
     expect(CitySearchWrapper.find('.city').prop('value')).toBe(query);
   });
 
-  test('change state when text input changes', () => {
-    const CitySearchWrapper = shallow(<CitySearch />);
-    CitySearchWrapper.setState({
-      query: 'Munich'
-    });
-    const eventObject = { target: { value: 'Berlin' }};
+
+test('changes state when text input changes', () => {
+    CitySearchWrapper.setState({ query: 'Munich' });
+    const eventObject = {target: { value: 'Berlin' }};
     CitySearchWrapper.find('.city').simulate('change', eventObject);
-    expect(CitySearchWrapper.state('query')).toBe('Berlin');
+    expect(CitySearchWrapper.state('query')).toBe('Berlin')
   });
+
 
   test('render list of suggestions correctly', () => {
     const locations = extractLocations(mockData);
