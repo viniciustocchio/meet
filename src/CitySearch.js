@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import "./App.css"
 class CitySearch extends Component {
   state = {
     query: '',
@@ -7,7 +7,7 @@ class CitySearch extends Component {
     showSuggestions: undefined
   }
 
-  handleInputChanged = (event) => {
+  inputChanged = (event) => {
   const value = event.target.value;
     this.setState({ query: value });
     const suggestions = this.props.locations.filter((location) => {
@@ -35,7 +35,7 @@ class CitySearch extends Component {
           type="text"
           className="city"
           value={this.state.query}
-          onChange={this.handleInputChanged}
+          onChange={this.inputChanged}
           onFocus={() => { this.setState({ showSuggestions: true }) }}
         />
         <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>

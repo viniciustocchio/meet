@@ -4,7 +4,7 @@ export class NumberOfEvents extends Component {
   
   state = { numberOfEvents: 32 };
 
-  handleChange = (e) => {
+  inputChanged = (e) => {
     const value = e.target.value;
     this.setState({ numberOfEvents: value });
   };
@@ -18,7 +18,7 @@ export class NumberOfEvents extends Component {
             type='number'
             className='event-number'
             value={this.state.numberOfEvents}
-            onChange={this.handleChange}
+            onChange={this.inputChanged}
           />
         </label>
       </div>
