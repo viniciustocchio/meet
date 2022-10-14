@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import "./App.css"
+import "./App.css";
+import { InfoAlert } from './Alert';
+
 class CitySearch extends Component {
   state = {
     query: '',
