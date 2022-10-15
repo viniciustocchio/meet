@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 
 export class NumberOfEvents extends Component {
   
-  state = { numberOfEvents: 32 };
+  state = { 
+    numberOfEvents: 32,
+    infoText: 'please, enter a number less than 32' 
+  };
 
   inputChanged = (e) => {
     const value = e.target.value;
     this.setState({ numberOfEvents: value });
+
   };
 
   render() {
@@ -19,6 +23,7 @@ export class NumberOfEvents extends Component {
             className='event-number'
             value={this.state.numberOfEvents}
             onChange={this.inputChanged}
+            ErrorAlert text={this.state.infoText}
           />
         </label>
       </div>
