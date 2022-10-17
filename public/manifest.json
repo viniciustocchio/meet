@@ -1,6 +1,12 @@
+
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "meet up",
+  "short_name": "meet up",
+  "theme_color": "#132330",
+  "background_color": "#153194",
+  "display": "browser",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
     {
       "src": "favicon.ico",
@@ -11,18 +17,24 @@
     {
       "src": "meet-app-192.png",
       "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any maskable"
+      "sizes": "192x192"
+    
     },
     {
       "src": "meet-app-512.png",
       "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any maskable"
+      "sizes": "512x512"
+     
     }
+<<<<<<< HEAD
   ],
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
+=======
+  ]
+ 
+}
+>>>>>>> 3c147a8205e0d864b2bcad5e8d58ecfa1953a6f3
