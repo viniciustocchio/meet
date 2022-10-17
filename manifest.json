@@ -1,7 +1,12 @@
 
 {
-  "short_name": "Meet App",
-  "name": "Meet App",
+  "name": "meet up",
+  "short_name": "meet up",
+  "theme_color": "#132330",
+  "background_color": "#153194",
+  "display": "browser",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
     {
       "src": "favicon.ico",
@@ -12,18 +17,15 @@
     {
       "src": "meet-app-192.png",
       "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any maskable"
+      "sizes": "192x192"
+    
     },
     {
       "src": "meet-app-512.png",
       "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any maskable"
+      "sizes": "512x512"
+     
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#ff6200",
-  "background_color": "#2a2a2a"
+  ]
+ 
 }
