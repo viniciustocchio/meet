@@ -21,7 +21,7 @@ return result;
 const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const {access_token} = await fetch(
-    'https://nxbwjyi6mf.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' + '/' + encodeCode
+    'https://nxbwjyi6mf.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/' + encodeCode
   )
   .then ((res) => {
     return res.json();
@@ -58,7 +58,7 @@ const token = await getAccessToken();
 
 if (token) {
   removeQuery();
-  const url = 'https://nxbwjyi6mf.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' + '/' + token;
+  const url = 'https://nxbwjyi6mf.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/' + token;
   const result = await axios.get(url);
   if(result.data) {
     let locations = extractLocations(result.data.events);
