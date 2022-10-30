@@ -1,39 +1,45 @@
-import React, { Component } from 'react'
- import './Event.css';
+import React, { Component } from 'react';
 
-export class Event extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isVisible: false,
-    }
-  }
+class Event extends Component {
+  state = { show: false };
 
-  
-  clickHandler = () => {
-    this.setState({isVisible: !this.state.isVisible});
+  eventDetailsToggler = () => {
+    this.setState({ show: !this.state.show });
   };
 
   render() {
-  const isVisible = this.state.isVisible;
-  const { event } = this.props;
+    const { event } = this.props;
 
     return (
-      <div className='details__outer-container'>
-        <h2>{event.summary}</h2>
-        <p>{event.description}</p>
-        <button className='details__toggle' onClick={this.clickHandler}> 
-          <span className={isVisible ? "details__toggle--show-text" : "details__toggle--show-text visible"}>Show</span>
-          <span className={isVisible ? "details__toggle--hide-text visible" : "details__toggle--hide-text"}>Hide</span>
-        </button>
-        <div className={isVisible ? "details__inner-container visible" : "details__inner-container"}>
-          <p>Location: {event.location}</p>
-          <p>From: {event.start.dateTime}</p>
-          <p>Until: {event.end.dateTime}</p>
-        </div>
+      <div className="event-card">
+        <h3 className="event-title">{event.summary}</h3>
+        <p className="event-info">
+          {event.location} {event.start.dateTime} {event.start.timeZone}
+        </p>
+        {this.state.show && (
+          <div className="event-description">
+            <p className="description-title">Event Description:</p>
+            <p>{event.description}</p>
+          </div>
+        )}
+        {!this.state.show ? (
+          <button
+            className="show_details-button btn"
+            onClick={this.eventDetailsToggler}
+          >
+            Show Details
+          </button>
+        ) : (
+          <button
+            className="hide_details-button btn"
+            onClick={this.eventDetailsToggler}
+          >
+            Hide Details
+          </button>
+        )}
       </div>
     );
   }
 }
 
-export default Event
+export default Event;
