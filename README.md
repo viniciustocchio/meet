@@ -1,4 +1,4 @@
-[![shield serverless](https://img.shields.io/badge/viniciustocchio-angular-red)](https://github.com/viniciustocchio/meet)
+[![shield serverless](https://img.shields.io/badge/viniciustocchio-serverless%20app-yellowgreen)](https://github.com/viniciustocchio/meet)
 
 # meet
 
