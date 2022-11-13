@@ -25,6 +25,7 @@ class App extends Component {
   };
 
 async componentDidMount() {
+  alert("mounted")
   this.mounted = true;
   const accessToken = localStorage.getItem('access_token');
   const isTokenValid = (await checkToken(accessToken)).error ? false : true;
@@ -122,8 +123,11 @@ render() {
   const { locations, numberOfEvents, events } = this.state;
   return (
     <div className="App">
-      <WarningAlert text={this.state.offlineText} />
+
       <NumberOfEvents
+          getAccessToken={() => {
+            getAccessToken();
+          }}
         updateEvents={this.updateEvents}
         numberOfEvents={numberOfEvents}
         handleInputChanged={this.handleInputChanged}
